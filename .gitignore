@@ -288,3 +288,6 @@ __pycache__/
 
 .publish/
 .DS_Store
+
+# ignore generated bundles
+main.build.js
