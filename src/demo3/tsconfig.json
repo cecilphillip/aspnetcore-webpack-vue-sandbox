@@ -5,8 +5,6 @@
         "experimentalDecorators": true,
         "noEmitOnError": false,
         "sourceMap": true,
-        "allowJs": true,
-        "checkJs": true,
         "target": "es2015",
         "module": "commonjs",
         "moduleResolution": "node"
