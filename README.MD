@@ -2,17 +2,24 @@
 
 This repo contains demos showing various ways of configuring webpack and vue.js with ASP.NET Core projects.
 
-The master branch is currently targeting .NET Core 2.1 RC1, ASP.NET Core 2.1 RC1, webpack 4.8.3, and TypeScript 2.8.3
+Running the samples
+
+```bash
+> npm run build-dev or npm run build-prod
+> dotnet run
+```
 
 ## Demos
 
-- [Demo 1](demo1) - Loads Vue & SignalR from CDNs. No webpack. JavaScript in page.
+The master branch is currently targeting .NET Core 2.1 RC1, ASP.NET Core 2.1 RC1, webpack 4.8.3, and TypeScript 2.8.3
 
-- [Demo 2](demo2) - Loads JavaScript dependencies from NPM. Webpack bundling with TypeScript transpiling JavaScript to ES2015. Defines vue.js global component with external template.
+- [Demo 1](src/demo1) - Loads Vue & SignalR from CDNs. No webpack. JavaScript in page.
 
-- [Demo 3](demo3) - Loads JavaScript dependencies from NPM. Webpack bundling with TypeScript transpiling to ES2015. Defines vue.js global component with external template and class decorators.
+- [Demo 2](src/demo2) - Loads JavaScript dependencies from NPM. Webpack bundling with TypeScript transpiling JavaScript to ES2015. Defines vue.js global component with external template.
 
-- [Demo 4](demo4) - Loads JavaScript dependencies from NPM. Webpack bundling with TypeScript transpiling to ES2015. Custom vue.js component using single file component with .vue extension.
+- [Demo 3](src/demo3) - Loads JavaScript dependencies from NPM. Webpack bundling with TypeScript transpiling to ES2015. Defines vue.js global component with external template and class decorators.
+
+- [Demo 4](src/demo4) - Loads JavaScript dependencies from NPM. Webpack bundling with TypeScript transpiling to ES2015. Custom vue.js component using single file component with .vue extension.
 
 ## Useful tools
 
