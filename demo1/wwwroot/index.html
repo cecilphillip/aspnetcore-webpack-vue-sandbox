@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SignalR Demo</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Hub API</h2>
+        <form v-on:submit.prevent="addMessage">
+            <input type="text" v-model="newMessage">
+            <input type="submit" value="Send">
+        </form>
+
+        <h2>REST API</h2>
+        <form v-on:submit.prevent="addRestMessage">
+            <input type="text" v-model="newRestMessage">
+            <input type="submit" value="Send">
+        </form>
+
+        <h2>Streaming Hub</h2>
+        <form v-on:submit.prevent="countDown">
+            <input type="text" v-model="number">
+            <input type="submit" value="Send">
+        </form>
+
+        <ul>
+            <li v-for="message in messages">{{message}}</li>
+        </ul>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/@aspnet/signalr@1.0.0-rc1-update1/dist/browser/signalr.min.js"></script>
+    <script src="https://unpkg.com/msgpack5@4.0.2/dist/msgpack5.min.js"></script>
+    <script src="https://unpkg.com/@aspnet/signalr-protocol-msgpack@1.0.0-rc1-update1/dist/browser/signalr-protocol-msgpack.min.js"></script>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.min.js"></script>
+
+    <script>
+        (async function () {
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/app")
+                .withHubProtocol(new signalR.protocols.msgpack.MessagePackHubProtocol())
+                .build();
+
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    messages: [],
+                    newMessage: null,
+                    newRestMessage: null,
+                    number: null
+                },
+                methods: {
+                    addMessage: async function () {
+                        //await connection.invoke("Send", this.newMessage);
+                        await connection.invoke("Send", { Message: this.newMessage });
+                        this.newMessage = null;
+                    },
+                    addRestMessage: async function () {
+                       await fetch("/message", {
+                           method:"post",
+                           body: JSON.stringify({Message: this.newRestMessage}),
+                           headers: {
+                               "content-type" : "application/json"
+                           }
+                       });
+
+                       this.newRestMessage = null;
+                    },
+                    countDown: async function () {
+                        var stream = connection.stream("CountDown", parseInt(this.number));
+                        stream.subscribe({
+                            next: function(item) {
+                                app.messages.push(item);
+                            }
+                        });
+
+                        this.number = null;
+                    }
+                }
+            });
+            connection.on("Send", message => {
+                app.messages.push(message);
+            });
+
+            await connection.start();
+        })();
+    </script>
+</body>
+
+</html>
