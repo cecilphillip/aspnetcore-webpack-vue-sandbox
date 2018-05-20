@@ -21,6 +21,8 @@ The master branch is currently targeting .NET Core 2.1 RC1, ASP.NET Core 2.1 RC1
 
 - [Demo 4](src/demo4) - Loads JavaScript dependencies from NPM. Webpack bundling with TypeScript transpiling to ES2015. Custom vue.js component using single file component with .vue extension.
 
+- [Demo 5](src/demo5) - NPM for JavaScript. Webpack bundling with TypeScript transpiling to ES2015. Async vue.js component (SFC). RxJS 6 w/ SignalR stream adapter.
+
 ## Useful tools
 
 - [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=code-github-cephilli)
