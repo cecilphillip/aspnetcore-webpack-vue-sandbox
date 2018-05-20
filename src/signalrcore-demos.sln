@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo3", "demo3\demo3.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo4", "demo4\demo4.csproj", "{C740CED5-2465-4ECC-B4D9-BEBC6967A78B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo5", "demo5\demo5.csproj", "{057E41B5-B8E2-490B-96E7-BB7E355556C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{C740CED5-2465-4ECC-B4D9-BEBC6967A78B}.Release|x64.Build.0 = Release|Any CPU
 		{C740CED5-2465-4ECC-B4D9-BEBC6967A78B}.Release|x86.ActiveCfg = Release|Any CPU
 		{C740CED5-2465-4ECC-B4D9-BEBC6967A78B}.Release|x86.Build.0 = Release|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Debug|x64.Build.0 = Debug|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Debug|x86.Build.0 = Debug|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Release|x64.ActiveCfg = Release|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Release|x64.Build.0 = Release|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Release|x86.ActiveCfg = Release|Any CPU
+		{057E41B5-B8E2-490B-96E7-BB7E355556C2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
