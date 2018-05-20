@@ -1,0 +1,27 @@
+<template>
+  <div>
+    <h2>Hub API</h2>
+    <form v-on:submit.prevent="addMessage">
+        <input type="text" v-model="newMessage">
+        <input type="submit" value="Send">
+    </form>
+
+    <h2>REST API</h2>
+    <form v-on:submit.prevent="addRestMessage">
+        <input type="text" v-model="newRestMessage">
+        <input type="submit" value="Send">
+    </form>
+
+    <h2>Streaming Hub</h2>
+    <form v-on:submit.prevent="countDown">
+        <input type="text" v-model="number">
+        <input type="submit" value="Send">
+    </form>
+
+    <ul>
+        <li v-for="(message, index) in messages" :key="index">{{message}}</li>
+    </ul>
+</div>
+</template>
+
+<script lang="ts" src="./main-component.ts"></script>
