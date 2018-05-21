@@ -9,7 +9,6 @@ import { adapt } from '../stream-adapter';
 
 @Component({})
 export default class MainComponent extends Vue {
-    connection: HubConnection = null;
 
     get messages(): string[] {
         return this.$store.state.messages;
@@ -40,23 +39,19 @@ export default class MainComponent extends Vue {
     }
 
     created() {
-        this.connection = new HubConnectionBuilder()
-            .configureLogging(LogLevel.Information)
-            .withUrl("/app")
-            .withHubProtocol(new MessagePackHubProtocol())
-            .build();
+        console.log(this.$signalR);
+        let conn = this.$signalR["app"];
 
-        console.log(this.connection);
-
-        this.connection.on("Send", message => {
+        conn.on("Send", message => {
             this.$store.commit("addNewMessage", message);
         });
 
-        this.connection.start().catch(error => console.error(error));
+        conn.start().catch(error => console.error(error));
     }
 
     async addMessage() {
-        await this.connection.invoke("Send", { Message: this.newMessage });
+        let conn = this.$signalR["app"];
+        await conn.invoke("Send", { Message: this.newMessage });
         this.$store.commit("updateNewMessage", null);
     }
 
@@ -72,7 +67,8 @@ export default class MainComponent extends Vue {
     }
 
     async countDown() {
-        var stream = this.connection.stream<string>("CountDown", parseInt(this.number));
+        let conn = this.$signalR["app"];
+        var stream = conn.stream<string>("CountDown", parseInt(this.number));
         var store = this.$store;
 
         adapt(stream).pipe(
