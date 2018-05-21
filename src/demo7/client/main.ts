@@ -5,7 +5,7 @@ import { HubConnectionBuilder, LogLevel } from "@aspnet/signalr";
 import { MessagePackHubProtocol } from "@aspnet/signalr-protocol-msgpack";
 
 Vue.use<SignalRConnectionOptions>(SignalRConnectionPlugin, {
-    urls:["/app"],
+    urls:["/app", "/second"],
     buiderFactory(): HubConnectionBuilder {
         return new HubConnectionBuilder()
             .configureLogging(LogLevel.Information)

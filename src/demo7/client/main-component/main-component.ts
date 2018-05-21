@@ -46,12 +46,22 @@ export default class MainComponent extends Vue {
             this.$store.commit("addNewMessage", message);
         });
 
-        conn.start().catch(error => console.error(error));
+        let secondConn = this.$signalR["second"];
+        secondConn.on("Fire", message => {
+            this.$store.commit("addNewMessage", message);
+        });
+
+        Promise.all([conn.start(), secondConn.start()])
+            .catch(error => console.error(error));
     }
 
     async addMessage() {
         let conn = this.$signalR["app"];
         await conn.invoke("Send", { Message: this.newMessage });
+
+        let secondConn = this.$signalR["second"];
+        await secondConn.invoke("Fire", this.newMessage);
+
         this.$store.commit("updateNewMessage", null);
     }
 
@@ -63,7 +73,7 @@ export default class MainComponent extends Vue {
                 "content-type": "application/json"
             }
         });
-        this.$store.commit("updateNewMessage", null);
+        this.$store.commit("updateNewRestMessage", null);
     }
 
     async countDown() {
