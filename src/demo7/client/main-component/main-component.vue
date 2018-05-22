@@ -1,20 +1,20 @@
 <template>
   <div>
     <h2>Hub API</h2>
-    <form v-on:submit.prevent="addMessage">
-        <input type="text" v-model="newMessage">
+    <form v-on:submit.prevent="addNewMessage">
+        <input type="text" :value="newMessage" @input="updateNewMessage($event.target.value)">
         <input type="submit" value="Send">
     </form>
 
     <h2>REST API</h2>
     <form v-on:submit.prevent="addRestMessage">
-        <input type="text" v-model="newRestMessage">
+        <input type="text" :value="newRestMessage" @input="updateNewRestMessage($event.target.value)">
         <input type="submit" value="Send">
     </form>
 
     <h2>Streaming Hub</h2>
     <form v-on:submit.prevent="countDown">
-        <input type="text" v-model="number">
+        <input type="text" :value="number" @input="updateNumber($event.target.value)">
         <input type="submit" value="Send">
     </form>
 

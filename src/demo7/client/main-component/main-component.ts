@@ -3,52 +3,35 @@ import { MessagePackHubProtocol } from "@aspnet/signalr-protocol-msgpack";
 
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
+import { State, Mutation } from "vuex-class";
 
 import { map, filter, switchMap } from 'rxjs/operators';
 import { adapt } from '../stream-adapter';
+import { StoreState } from "../store";
 
 @Component({})
-export default class MainComponent extends Vue {
+export default class MainComponent extends Vue implements StoreState {
+    @State messages
+    @State newMessage
+    @State newRestMessage
+    @State number
 
-    get messages(): string[] {
-        return this.$store.state.messages;
-    }
-
-    get newMessage(): string {
-        return this.$store.state.newMessage;
-    }
-
-    set newMessage(value: string) {
-        this.$store.commit('updateNewMessage', value);
-    }
-
-    get newRestMessage(): string {
-        return this.$store.state.newRestMessage;
-    }
-
-    set newRestMessage(value: string) {
-        this.$store.commit('updateNewRestMessage', value);
-    }
-
-    get number(): string {
-        return this.$store.state.number;
-    }
-
-    set number(value: string) {
-        this.$store.commit('updateNumber', value);
-    }
+    @Mutation updateNewMessage
+    @Mutation updateNewRestMessage
+    @Mutation updateNumber
+    @Mutation addNewMessage
 
     created() {
         console.log(this.$signalR);
         let conn = this.$signalR["app"];
 
         conn.on("Send", message => {
-            this.$store.commit("addNewMessage", message);
+            this.addNewMessage(message);
         });
 
         let secondConn = this.$signalR["second"];
         secondConn.on("Fire", message => {
-            this.$store.commit("addNewMessage", message);
+            this.addNewMessage(message);
         });
 
         Promise.all([conn.start(), secondConn.start()])
@@ -62,7 +45,7 @@ export default class MainComponent extends Vue {
         let secondConn = this.$signalR["second"];
         await secondConn.invoke("Fire", this.newMessage);
 
-        this.$store.commit("updateNewMessage", null);
+        this.updateNewMessage("");
     }
 
     async addRestMessage() {
@@ -73,7 +56,7 @@ export default class MainComponent extends Vue {
                 "content-type": "application/json"
             }
         });
-        this.$store.commit("updateNewRestMessage", null);
+        this.updateNewMessage("");
     }
 
     async countDown() {
@@ -83,8 +66,8 @@ export default class MainComponent extends Vue {
 
         adapt(stream).pipe(
             filter(x => parseInt(x) % 2 === 0)
-        ).subscribe(x => store.commit("addNewMessage", x));
+        ).subscribe(x => this.addNewMessage(x));
 
-        this.number = null;
+        this.updateNumber("");
     }
 }

@@ -7,9 +7,7 @@ export interface SignalRConnectionOptions {
     urls: string[]
 }
 
-export
-
-    function stripSlash(value: string): string {
+function stripSlash(value: string): string {
     if (value.startsWith("/"))
         value = value.slice(1);
     return value;
@@ -22,11 +20,9 @@ const SignalRConnectionPlugin: PluginObject<SignalRConnectionOptions> = {
         let connections: { [index: string]: HubConnection } = {};
 
         options.urls.forEach((url: string): void => {
-            let conn = options.buiderFactory()
+            connections[stripSlash(url)] = options.buiderFactory()
                 .withUrl(url)
                 .build();
-
-            connections[stripSlash(url)] = conn;
         });
 
         Vue.mixin({
