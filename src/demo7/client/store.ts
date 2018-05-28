@@ -11,6 +11,7 @@ export interface StoreState {
 Vue.use(Vuex);
 
 export const store = new Store<StoreState>({
+    strict: process.env.NODE_ENV !== 'production',
     state: {
         messages: [],
         newMessage: "",

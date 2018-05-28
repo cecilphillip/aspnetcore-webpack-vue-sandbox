@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Hub API</h2>
-    <form v-on:submit.prevent="addNewMessage">
+    <form v-on:submit.prevent="addMessage">
         <input type="text" :value="newMessage" @input="updateNewMessage($event.target.value)">
         <input type="submit" value="Send">
     </form>

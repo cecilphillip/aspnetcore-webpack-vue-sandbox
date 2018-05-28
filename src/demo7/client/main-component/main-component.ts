@@ -9,7 +9,7 @@ import { map, filter, switchMap } from 'rxjs/operators';
 import { adapt } from '../stream-adapter';
 import { StoreState } from "../store";
 
-@Component({})
+@Component
 export default class MainComponent extends Vue implements StoreState {
     @State messages
     @State newMessage
@@ -22,7 +22,6 @@ export default class MainComponent extends Vue implements StoreState {
     @Mutation addNewMessage
 
     created() {
-        console.log(this.$signalR);
         let conn = this.$signalR["app"];
 
         conn.on("Send", message => {

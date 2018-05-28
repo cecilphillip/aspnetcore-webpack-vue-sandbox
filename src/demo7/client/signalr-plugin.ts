@@ -3,7 +3,7 @@ import { HubConnectionBuilder, HubConnection, LogLevel } from "@aspnet/signalr";
 import { MessagePackHubProtocol } from "@aspnet/signalr-protocol-msgpack";
 
 export interface SignalRConnectionOptions {
-    buiderFactory: () => HubConnectionBuilder
+    builderFactory: () => HubConnectionBuilder
     urls: string[]
 }
 
@@ -20,7 +20,7 @@ const SignalRConnectionPlugin: PluginObject<SignalRConnectionOptions> = {
         let connections: { [index: string]: HubConnection } = {};
 
         options.urls.forEach((url: string): void => {
-            connections[stripSlash(url)] = options.buiderFactory()
+            connections[stripSlash(url)] = options.builderFactory()
                 .withUrl(url)
                 .build();
         });
