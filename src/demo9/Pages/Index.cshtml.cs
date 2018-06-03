@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 using demo9.Validation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -28,6 +24,7 @@ namespace demo9.Pages
             [EmailAddress]
             [VeeValidate]
             public string Email { get; set; }
+            [Remote(action:"Validate", controller:"validator", HttpMethod="POST", AdditionalFields="")]
             public string Message { get; set; }
         }
 

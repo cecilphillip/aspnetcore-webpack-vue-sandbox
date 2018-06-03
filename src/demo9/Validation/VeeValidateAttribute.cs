@@ -27,8 +27,12 @@ namespace demo9.Validation
 
             var elementName = context.Attributes["name"];
             var attributeValue = $"aspnet:{elementName}";
+
+            // Special handling for required rule. Needs to be a part of the base rule definition
+            // of the v-validate attribute
             var isRequired = context.Attributes.ContainsKey("data-val-required");
             attributeValue = isRequired ? $"required|{attributeValue}" : attributeValue;
+
             MergeAttribute(context.Attributes, "v-validate", $"'{attributeValue}'");
         }
 

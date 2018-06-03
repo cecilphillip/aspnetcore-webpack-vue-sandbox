@@ -27,8 +27,13 @@ The master branch is currently targeting .NET Core 2.1 RC1, ASP.NET Core 2.1 RC1
 
 - [Demo 7](src/demo7) - NPM for JavaScript. Webpack bundling with TypeScript transpiling. Async vue.js component (SFC) + vuex state management + experimental SignalR VueJS plugin. RxJS 6 w/ SignalR stream adapter.
 
+- [Demo 8](src/demo8) - Simple client side validation using Razor Pages, VueJS and Vee-Validate. Converts data-val-* into Vee-Validate rules
+
+- [Demo 9](src/demo9) - (Somewhat) unobstrusive validation using Razor Pages, VueJS, Vee-Validate. Converts data-val-* into Vee-Validate rules. Uses a custom [ValidationAttribute](src/Validation/VeeValidateAttribute.cs) type to add the `v-validate` to the input elements.
+
 ## Useful tools
 
 - [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=code-github-cephilli)
+- [Vue.js devtools for Firefox](https://addons.mozilla.org/en-GB/firefox/addon/vue-js-devtools/)
 - [Vetur - Vue tooling for VS Code](https://marketplace.visualstudio.com/items?itemName=octref.vetur&WT.mc_id=code-github-cephilli)
 - [Vue VSCode Snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets&WT.mc_id=code-github-cephilli)
