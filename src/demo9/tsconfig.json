@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmitOnError": false,
+    "sourceMap": true,
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node"
+  },
+  "include": [
+    "client/**/*.ts",
+    "client/**/*.vue",
+    "custom.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

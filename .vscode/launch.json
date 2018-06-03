@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/src/demo8/bin/Debug/netcoreapp2.1/demo8.dll",
+            "program": "${workspaceFolder}/src/demo9/bin/Debug/netcoreapp2.1/demo9.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/demo8",
+            "cwd": "${workspaceFolder}/src/demo9",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {
