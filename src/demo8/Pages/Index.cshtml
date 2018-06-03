@@ -4,19 +4,24 @@
 <div id="serverForm" class="columns">
     <div class="column is-half">
 
-        <form method="POST"  v-on:submit="validateBeforeSubmit"  novalidate>
+        <form method="POST" v-on:submit="validateBeforeSubmit" novalidate>
             <div class="field">
                 <label class="label" asp-for="Input.Name"></label>
-                <div class="control">
-                    <input class="input" v-bind:class="{'is-danger': errors.has('Input.Name')}" v-validate="'aspnet:Input.Name'" data-vv-delay="400" type="text" asp-for="Input.Name" />
+                <div class="control has-icons-left">
+                    <input class="input" v-bind:class="{'is-danger': errors.has('Input.Name')}" v-validate="'aspnet:Input.Name'" data-vv-delay="400"
+                        type="text" asp-for="Input.Name" />
+                        <span v-show="fields['Input.Name'] && fields['Input.Name'].dirty" class="icon is-small is-left has-text-warning">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </span>
                 </div>
-               <p v-show="errors.has('Input.Name')" class="help is-danger">{{errors.first('Input.Name')}}</p>
+                <p v-show="errors.has('Input.Name')" class="help is-danger">{{errors.first('Input.Name')}}</p>
             </div>
 
             <div class="field">
                 <label class="label" asp-for="Input.UserName"></label>
                 <div class="control has-icons-left has-icons-right">
-                    <input v-validate="'aspnet:Input.UserName'" class="input" v-bind:class="{'is-danger': errors.has('Input.UserName')}" type="text" asp-for="Input.UserName" />
+                    <input v-validate="'aspnet:Input.UserName'" class="input" v-bind:class="{'is-danger': errors.has('Input.UserName')}" type="text"
+                        asp-for="Input.UserName" />
                     <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
                     </span>
@@ -27,7 +32,8 @@
             <div class="field">
                 <label class="label" asp-for="Input.Email"></label>
                 <div class="control has-icons-left has-icons-right">
-                    <input v-validate="'aspnet:Input.Email'" class="input" v-bind:class="{'is-danger': errors.has('Input.Email')}" type="email" asp-for="Input.Email" />
+                    <input v-validate="'aspnet:Input.Email'" class="input" v-bind:class="{'is-danger': errors.has('Input.Email')}" type="email"
+                        asp-for="Input.Email" />
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
@@ -60,6 +66,5 @@
     </div>
 
     @section scripts {
-        <script src="~/main.build.js" asp-append-version="true"></script>
-    }
+    <script src="~/main.build.js" asp-append-version="true"></script> }
 </div>
