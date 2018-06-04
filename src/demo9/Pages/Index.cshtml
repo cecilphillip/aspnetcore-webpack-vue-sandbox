@@ -8,7 +8,7 @@
             <div class="field">
                 <label class="label" asp-for="Input.Name"></label>
                 <div class="control has-icons-left">
-                    <input class="input" v-bind:class="{'is-danger': errors.has('Input.Name')}" type="text" asp-for="Input.Name" />
+                    <input class="input" type="text" asp-for="Input.Name" />
                     <span v-show="fields['Input.Name'] && fields['Input.Name'].dirty" class="icon is-small is-left has-text-warning">
                         <i class="fas fa-exclamation-circle"></i>
                     </span>
@@ -19,7 +19,7 @@
             <div class="field">
                 <label class="label" asp-for="Input.UserName"></label>
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input" v-bind:class="{'is-danger': errors.has('Input.UserName')}" type="text" asp-for="Input.UserName" />
+                    <input class="input" type="text" asp-for="Input.UserName" />
                     <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
                     </span>
@@ -30,7 +30,7 @@
             <div class="field">
                 <label class="label" asp-for="Input.Email"></label>
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input" v-bind:class="{'is-danger': errors.has('Input.Email')}" type="email" asp-for="Input.Email" />
+                    <input class="input" type="email" asp-for="Input.Email" />
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
@@ -38,14 +38,13 @@
                 <p v-show="errors.has('Input.Email')" class="help is-danger">{{errors.first('Input.Email')}}</p>
             </div>
 
-
             <div class="field">
                 <label class="label" asp-for="Input.Message"></label>
                 <div class="control">
                     <textarea class="textarea" asp-for="Input.Message"></textarea>
                 </div>
+                 <p v-show="errors.has('Input.Message')" class="help is-danger">{{errors.first('Input.Message')}}</p>
             </div>
-
 
             <div class="field is-grouped">
                 <div class="control">

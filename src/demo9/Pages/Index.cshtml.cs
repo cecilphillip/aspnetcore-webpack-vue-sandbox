@@ -15,8 +15,9 @@ namespace demo9.Pages
             public string Name { get; set; }
 
             [Required]
-            [MaxLength(10)]
+            [MaxLength(15)]
             [MinLength(5)]
+            [Remote(action:"IsUserNameAvailable", controller:"Validation", HttpMethod="POST")]
             [VeeValidate]
             public string UserName { get; set; }
 
@@ -24,7 +25,9 @@ namespace demo9.Pages
             [EmailAddress]
             [VeeValidate]
             public string Email { get; set; }
-            [Remote(action:"Validate", controller:"validator", HttpMethod="POST", AdditionalFields="")]
+
+            [MaxLength(150)]
+            [VeeValidate]
             public string Message { get; set; }
         }
 
