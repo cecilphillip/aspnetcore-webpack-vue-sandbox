@@ -29,7 +29,7 @@ The master branch is currently targeting .NET Core 2.1 RC1, ASP.NET Core 2.1 RC1
 
 - [Demo 8](src/demo8) - Simple client side validation using Razor Pages, VueJS and Vee-Validate. Converts data-val-* into Vee-Validate rules
 
-- [Demo 9](src/demo9) - Attempt at (somewhat) unobstrusive validation using Razor Pages, VueJS, Vee-Validate. Converts data-val-* into Vee-Validate rules. Uses a custom [ValidationAttribute](src/demo9/Validation/VeeValidateAttribute.cs) and a custom Vee-Validate [rule](src/demo9/client/validation.ts) to add client side validation to the input elements. Also does remote validation.
+- [Demo 9](src/demo9) - Attempt at (somewhat) unobstrusive validation using Razor Pages, VueJS, Vee-Validate. Converts data-val-* into Vee-Validate rules. Uses a custom [ValidationAttribute](src/demo9/Validation/VeeValidateAttribute.cs) and a custom Vee-Validate [rule](src/demo9/client/validations.ts) to add client side validation to the input elements. Also does remote validation.
 
 ## Useful tools
 
