@@ -11,7 +11,7 @@ Running the samples
 
 ## Demos
 
-The master branch is currently targeting .NET Core 2.1 RC1, ASP.NET Core 2.1 RC1, webpack 4.8.3, and TypeScript 2.8.3
+The master branch is currently using .NET Core 2.1, ASP.NET Core 2.1, Vue.js 2.5.16, Vue CLI 3.0.0-beta.15, webpack 4.8.3, and TypeScript 2.8.3
 
 - [Demo 1](src/demo1) - Loads Vue & SignalR from CDNs. No webpack. JavaScript in page.
 
@@ -30,6 +30,8 @@ The master branch is currently targeting .NET Core 2.1 RC1, ASP.NET Core 2.1 RC1
 - [Demo 8](src/demo8) - Simple client side validation using Razor Pages, VueJS and Vee-Validate. Converts data-val-* into Vee-Validate rules
 
 - [Demo 9](src/demo9) - Attempt at (somewhat) unobstrusive validation using Razor Pages, VueJS, Vee-Validate. Converts data-val-* into Vee-Validate rules. Uses a custom [ValidationAttribute](src/demo9/Validation/VeeValidateAttribute.cs) and a custom Vee-Validate [rule](src/demo9/client/validations.ts) to add client side validation to the input elements. Also does remote validation.
+
+- [Demo 10](src/demo10) - Same as demo 9, but built using the .NET CLI and the Vue.js CLI.
 
 ## Useful tools
 
