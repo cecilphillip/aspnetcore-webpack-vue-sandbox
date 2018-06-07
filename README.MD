@@ -33,6 +33,8 @@ The master branch is currently using .NET Core 2.1, ASP.NET Core 2.1, Vue.js 2.5
 
 - [Demo 10](src/demo10) - Same as demo 9, but built using the .NET CLI and the Vue.js CLI.
 
+- [Demo 11](src/demo11) - **Ignore this. Nothing to see here!** Hot module replacement using Vue CLI and Microsoft.AspNetCore.SpaServices. Borrowed some code from [JavaScriptServices](https://github.com/aspnet/JavaScriptServices/tree/2.1.0/src/Microsoft.AspNetCore.SpaServices.Extensions/AngularCli)
+
 ## Useful tools
 
 - [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=code-github-cephilli)
