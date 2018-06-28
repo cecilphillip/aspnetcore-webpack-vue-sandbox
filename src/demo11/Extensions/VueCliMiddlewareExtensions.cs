@@ -6,9 +6,7 @@ namespace demo11.Extensions
 {
  public static class VueCliMiddlewareExtensions
     {
-        public static void UseVueCliServer(
-            this ISpaBuilder spaBuilder,
-            string npmScript)
+        public static void UseVueCliServer( this ISpaBuilder spaBuilder, string npmScript)
         {
             if (spaBuilder == null)
             {

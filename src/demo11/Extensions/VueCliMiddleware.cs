@@ -55,7 +55,6 @@ namespace demo11.Extensions
             logger.LogInformation("Starting the Vue CLI");
 
             var npmScriptRunner = new NpmScriptRunner(sourcePath, npmScriptName, string.Empty, null);
-            npmScriptRunner.AttachToLogger(logger);
 
             var uri = new Uri("http://localhost:8080");
 

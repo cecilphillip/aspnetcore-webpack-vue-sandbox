@@ -56,40 +56,6 @@ namespace demo11.Extensions
              _process = LaunchNodeProcess(processStartInfo);
         }
 
-        public void AttachToLogger(ILogger logger)
-        {
-            // // When the NPM task emits complete lines, pass them through to the real logger
-            // StdOut.OnReceivedLine += line =>
-            // {
-            //     if (!string.IsNullOrWhiteSpace(line))
-            //     {
-            //         // NPM tasks commonly emit ANSI colors, but it wouldn't make sense to forward
-            //         // those to loggers (because a logger isn't necessarily any kind of terminal)
-            //         logger.LogInformation(StripAnsiColors(line));
-            //     }
-            // };
-
-            // StdErr.OnReceivedLine += line =>
-            // {
-            //     if (!string.IsNullOrWhiteSpace(line))
-            //     {
-            //         logger.LogError(StripAnsiColors(line));
-            //     }
-            // };
-
-            // // But when it emits incomplete lines, assume this is progress information and
-            // // hence just pass it through to StdOut regardless of logger config.
-            // StdErr.OnReceivedChunk += chunk =>
-            // {
-            //     var containsNewline = Array.IndexOf(
-            //         chunk.Array, '\n', chunk.Offset, chunk.Count) >= 0;
-            //     if (!containsNewline)
-            //     {
-            //         Console.Write(chunk.Array, chunk.Offset, chunk.Count);
-            //     }
-            // };
-        }
-
         private static string StripAnsiColors(string line)
             => AnsiColorRegex.Replace(line, string.Empty);
 
