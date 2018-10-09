@@ -10,10 +10,6 @@
     "module": "commonjs",
     "moduleResolution": "node"
   },
-  "include": [
-    "client/**/*",
-    "custom.d.ts"
-  ],
   "exclude": [
     "node_modules"
   ]
