@@ -33,10 +33,10 @@
     </div>
 
     <!-- SCRIPTS -->
-    <script src="https://unpkg.com/@aspnet/signalr@1.0.0/dist/browser/signalr.min.js"></script>
-    <script src="https://unpkg.com/msgpack5@4.0.2/dist/msgpack5.min.js"></script>
-    <script src="https://unpkg.com/@aspnet/signalr-protocol-msgpack@1.0.0/dist/browser/signalr-protocol-msgpack.min.js"></script>
-    <script src="https://unpkg.com/vue@2.5.16/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/@aspnet/signalr@1.0.5/dist/browser/signalr.min.js"></script>
+    <script src="https://unpkg.com/msgpack5@4.2.1/dist/msgpack5.min.js"></script>
+    <script src="https://unpkg.com/@aspnet/signalr-protocol-msgpack@1.0.4/dist/browser/signalr-protocol-msgpack.min.js"></script>
+    <script src="https://unpkg.com/vue@2.5.17/dist/vue.min.js"></script>
 
     <script>
         (async function () {
@@ -60,20 +60,20 @@
                         this.newMessage = null;
                     },
                     addRestMessage: async function () {
-                       await fetch("/message", {
-                           method:"post",
-                           body: JSON.stringify({Message: this.newRestMessage}),
-                           headers: {
-                               "content-type" : "application/json"
-                           }
-                       });
+                        await fetch("/message", {
+                            method: "post",
+                            body: JSON.stringify({ Message: this.newRestMessage }),
+                            headers: {
+                                "content-type": "application/json"
+                            }
+                        });
 
-                       this.newRestMessage = null;
+                        this.newRestMessage = null;
                     },
                     countDown: async function () {
                         var stream = connection.stream("CountDown", parseInt(this.number));
                         stream.subscribe({
-                            next: function(item) {
+                            next: function (item) {
                                 app.messages.push(item);
                             }
                         });
