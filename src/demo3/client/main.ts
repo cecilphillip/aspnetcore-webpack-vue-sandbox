@@ -31,7 +31,7 @@ class MainComponent extends Vue {
             .catch(error => console.error(error));
     }
 
-    async  addMessage() {
+    async addMessage() {
         await this.connection.invoke("Send", { Message: this.newMessage });
         this.newMessage = null;
     }
@@ -62,6 +62,5 @@ class MainComponent extends Vue {
         this.number = null;
     }
 }
-
 
 new Vue({ el: "#app", components: { MainComponent } });
