@@ -1,11 +1,9 @@
-import { HubConnectionBuilder, HubConnection, LogLevel } from "@aspnet/signalr";
-import { MessagePackHubProtocol } from "@aspnet/signalr-protocol-msgpack";
 
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import { State, Mutation } from "vuex-class";
 
-import { map, filter, switchMap } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 import { adapt } from '../stream-adapter';
 import { StoreState } from "../store";
 
@@ -61,7 +59,6 @@ export default class MainComponent extends Vue implements StoreState {
     async countDown() {
         let conn = this.$signalR["app"];
         var stream = conn.stream<string>("CountDown", parseInt(this.number));
-        var store = this.$store;
 
         adapt(stream).pipe(
             filter(x => parseInt(x) % 2 === 0)

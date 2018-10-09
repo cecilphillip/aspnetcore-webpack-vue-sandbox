@@ -1,12 +1,9 @@
 // @ts-nocheck
 const path = require("path");
-const webpack = require("webpack");
 const { VueLoaderPlugin } = require('vue-loader');
 
-module.exports = function (env) {
-  const isProduction = env === "prod";
+module.exports = function (env, argv) {
   return {
-    mode: isProduction ? 'production' : 'development',
     context: path.join(__dirname, "./client"),
     resolve: {
       extensions: [".ts", ".js", '.vue'],
@@ -20,7 +17,7 @@ module.exports = function (env) {
     output: {
       publicPath: "/",
       path: path.join(__dirname, "./wwwroot"),
-      filename: isProduction ? "[name].build.min.js" : "[name].build.js"
+      filename: argv.mode === 'production' ? "[name].build.min.js" : "[name].build.js"
     },
     plugins: [
       new VueLoaderPlugin()
@@ -28,8 +25,8 @@ module.exports = function (env) {
     module: {
       rules: [
         { test: /\.(ts|js)$/, use: { loader: "ts-loader", options: { appendTsSuffixTo: [/\.vue$/] } }, exclude: /node_modules/ },
-        { test: /\.vue$/, loader: 'vue-loader', options: {  esModule: true, loaders: {}} },
-        { test: /\.html$/, use: [{ loader: 'html-loader', options: { minimize: false } }]}
+        { test: /\.vue$/, loader: 'vue-loader', options: { esModule: true, loaders: {} } },
+        { test: /\.html$/, use: [{ loader: 'html-loader', options: { minimize: false } }] }
       ]
     }
   };
