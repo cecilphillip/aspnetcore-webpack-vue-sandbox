@@ -11,6 +11,10 @@
         "module": "commonjs",
         "moduleResolution": "node"
     },
+    "include": [
+        "**/*.ts",
+        "**/*.vue",
+      ],
     "types": [
         "node"
       ]
