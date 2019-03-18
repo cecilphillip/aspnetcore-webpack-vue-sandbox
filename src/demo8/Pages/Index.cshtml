@@ -4,7 +4,7 @@
 <div id="serverForm" class="columns">
     <div class="column is-half">
 
-        <form method="POST" v-on:submit="validateBeforeSubmit" novalidate>
+        <form method="POST" v-on:submit="validateBeforeSubmit($event)" novalidate>
             <div class="field">
                 <label class="label" asp-for="Input.Name"></label>
                 <div class="control has-icons-left">

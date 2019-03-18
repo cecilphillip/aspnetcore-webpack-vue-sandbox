@@ -1,21 +1,25 @@
 {
-    "compilerOptions": {
-        "noImplicitAny": false,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "noEmitOnError": false,
-        "sourceMap": true,
-        "allowJs": true,
-        "checkJs": true,
-        "target": "es2015",
-        "module": "commonjs",
-        "moduleResolution": "node"
-    },
-    "include": [
-        "**/*.ts",
-        "**/*.vue",
-      ],
-    "types": [
-        "node"
-      ]
+  "compilerOptions": {
+    "outDir": "../wwwroot",
+    "noImplicitAny": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmitOnError": false,
+    "sourceMap": true,
+    "allowJs": true,
+    "checkJs": true,
+    "target": "es2016",
+    "module": "commonjs",
+    "moduleResolution": "node"
+  },
+  "include": [
+    "**/*.js",
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "types": [
+    "node"
+  ]
 }

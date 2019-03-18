@@ -14,11 +14,11 @@ Vue.component("main-component", {
         }
     },
     methods: {
-        addMessage: async function () {
+        addMessage: async function() {
             await this.connection.invoke("Send", { Message: this.newMessage });
             this.newMessage = null;
         },
-        addRestMessage: async function () {
+        addRestMessage: async function() {
             await fetch("/message", {
                 method: "post",
                 body: JSON.stringify({ Message: this.newRestMessage }),
@@ -29,11 +29,11 @@ Vue.component("main-component", {
 
             this.newRestMessage = null;
         },
-        countDown: async function () {
+        countDown: async function() {
             var stream = this.connection.stream("CountDown", parseInt(this.number));
             var messages = this.messages;
             stream.subscribe({
-                next: function (item) {
+                next: function(item) {
                     console.log('item ' + item);
                     messages.push(item);
                 }
@@ -43,7 +43,7 @@ Vue.component("main-component", {
         }
     },
 
-    template: require('./main.html')+"" ,
+    template: require('./main.html') + "",
 
     created: function() {
         this.connection = new HubConnectionBuilder()

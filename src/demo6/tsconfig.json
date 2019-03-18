@@ -10,10 +10,11 @@
     "module": "commonjs",
     "moduleResolution": "node"
   },
-  "types": [
-    "node"
-  ],
   "exclude": [
     "node_modules"
+  ],
+  "include": [
+    "client/**/*.ts",
+    "client/**/*.vue"
   ]
 }

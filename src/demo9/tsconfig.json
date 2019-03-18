@@ -12,8 +12,7 @@
   },
   "include": [
     "client/**/*.ts",
-    "client/**/*.vue",
-    "custom.d.ts"
+    "client/**/*.vue"
   ],
   "exclude": [
     "node_modules"

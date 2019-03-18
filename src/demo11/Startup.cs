@@ -7,8 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.DependencyInjection;
-
-using demo11.Extensions;
+using VueCliMiddleware;
 
 namespace demo11
 {
@@ -20,20 +19,14 @@ namespace demo11
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseStaticFiles();
 
-            app.UseFileServer();
-
-             app.UseSpa(spa =>
+            app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = "client";
-
                 if (env.IsDevelopment())
                 {
-                    spa.UseVueCliServer(npmScript: "serve");
+                    spa.UseVueCli(npmScript: "serve", port: 8080); // optional port
                 }
             });
         }

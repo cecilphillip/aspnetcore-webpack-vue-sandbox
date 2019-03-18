@@ -1,10 +1,10 @@
 import Vue from "vue";
 import "./validations";
 
-new Vue({
+let vm = new Vue({
     el: "#serverForm",
     methods: {
-        async validateBeforeSubmit(evt:Event) {
+        async validateBeforeSubmit(evt: Event) {
             var result = await this.$validator.validateAll();
             if (result) return true;
             evt.preventDefault();

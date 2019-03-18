@@ -1,4 +1,4 @@
 declare module '*.html' {
     var _: string;
-    export default  _;
+    export default _;
 }

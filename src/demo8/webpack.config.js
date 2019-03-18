@@ -1,6 +1,5 @@
 // @ts-nocheck
 const path = require("path");
-const webpack = require("webpack");
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = function (env) {
@@ -28,8 +27,8 @@ module.exports = function (env) {
     module: {
       rules: [
         { test: /\.(ts|js)$/, use: { loader: "ts-loader", options: { appendTsSuffixTo: [/\.vue$/] } }, exclude: /node_modules/ },
-        { test: /\.vue$/, loader: 'vue-loader', options: {  esModule: true, loaders: {}} },
-        { test: /\.html$/, use: [{ loader: 'html-loader', options: { minimize: false } }]}
+        { test: /\.vue$/, loader: 'vue-loader', options: { esModule: true, loaders: {} } },
+        { test: /\.html$/, use: [{ loader: 'html-loader', options: { minimize: false } }] }
       ]
     }
   };

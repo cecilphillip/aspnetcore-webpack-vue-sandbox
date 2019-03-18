@@ -15,5 +15,9 @@
   ],
   "exclude": [
     "node_modules"
+  ],
+  "include": [
+    "client/**/*.ts",
+    "client/**/*.vue"
   ]
 }

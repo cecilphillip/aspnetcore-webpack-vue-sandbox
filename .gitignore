@@ -294,4 +294,5 @@ __pycache__/
 .DS_Store
 
 # ignore generated bundles
-main.build.js
+**/wwwroot/**/*.map
+**/wwwroot/**/*.js

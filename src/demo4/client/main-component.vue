@@ -31,7 +31,7 @@ import { MessagePackHubProtocol } from "@aspnet/signalr-protocol-msgpack";
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 
-@Component({})
+@Component
 export default class MainComponent extends Vue {
   messages: string[] = [];
   newMessage: string = "";

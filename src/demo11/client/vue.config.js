@@ -14,10 +14,5 @@ module.exports = {
             config => config.filename('[name].build.min.js'),
             config => config.filename('[name].build.js')
         );
-
-        // disable generation of index.html to outputDir
-        config.plugins.delete('html');
-        config.plugins.delete('preload');
-        config.plugins.delete('prefetch');
     }
 };

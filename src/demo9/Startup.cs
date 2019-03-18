@@ -28,7 +28,6 @@ namespace demo9
 
             app.UseStaticFiles();
             app.UseMvc();
-
         }
     }
 }
