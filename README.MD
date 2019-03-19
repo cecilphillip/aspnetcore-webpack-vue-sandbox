@@ -11,7 +11,7 @@ Running the samples
 
 ## Demos
 
-The master branch is currently using .NET Core 2.1, ASP.NET Core 2.1, Vue.js 2.5.16, Vue CLI 3.0.0-beta.15, webpack 4.8.3, and TypeScript 2.8.3
+The master branch is currently using .NET Core 2.2, ASP.NET Core 2.2, Vue.js 2.6.8, Vue CLI 3.5.1, webpack 4.29.6 and TypeScript 3.3.3
 
 - [Demo 1](src/demo1) - Loads Vue & SignalR from CDNs. No webpack. JavaScript in page.
 
@@ -33,7 +33,7 @@ The master branch is currently using .NET Core 2.1, ASP.NET Core 2.1, Vue.js 2.5
 
 - [Demo 10](src/demo10) - Same as demo 9, but built using the .NET CLI and the Vue.js CLI.
 
-- [Demo 11](src/demo11) - Vue CLI and [VueCliMiddleware](https://github.com/EEParker/aspnetcore-vueclimiddleware).
+- [Demo 11](src/demo11) - Vue CLI w/ [VueCliMiddleware](https://github.com/EEParker/aspnetcore-vueclimiddleware) for development interaction with the Vue cli.
 
 
 ## Useful tools
