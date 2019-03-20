@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import ChainableWebpackConfig from "webpack-chain";
+const ChainableWebpackConfig = require("webpack-chain");
 
 module.exports = {
     outputDir: '../wwwroot',
