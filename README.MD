@@ -38,7 +38,7 @@ The master branch is currently using .NET Core 2.2, ASP.NET Core 2.2, Vue.js 2.6
 
 ## Useful tools
 
-- [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=code-github-cephilli)
+- [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=academic-0000-cephilli)
 - [Vue.js devtools for Firefox](https://addons.mozilla.org/en-GB/firefox/addon/vue-js-devtools/)
-- [Vetur - Vue tooling for VS Code](https://marketplace.visualstudio.com/items?itemName=octref.vetur&WT.mc_id=code-github-cephilli)
-- [Vue VSCode Snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets&WT.mc_id=code-github-cephilli)
+- [Vetur - Vue tooling for VS Code](https://marketplace.visualstudio.com/items?itemName=octref.vetur&WT.mc_id=academic-0000-cephilli)
+- [Vue VSCode Snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets&WT.mc_id=academic-0000-cephilli)
